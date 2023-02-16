@@ -1,13 +1,13 @@
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")] // /api/users to access this particular controller
-    public class UsersController : ControllerBase
+    [Authorize]
+    public class UsersController : BaseApiController
     {
         private readonly DataContext context;
 
@@ -16,6 +16,7 @@ namespace API.Controllers
             this.context = context;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         //async Task<..> was added to have asychronus function 
         //so a lot of requests can be done at the same time
