@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from './_services/account.service';
 
 @Component({ //Decorator
   selector: 'app-root', //If we want to make use of this component, we use the name of the selector
@@ -8,16 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'Dating Application';
-  users: any; //Whatever..
 
-  constructor(private http: HttpClient){}
+  // http and accountService properties are injected into the component's constructor 
+  // using Angular's dependency injection mechanism
+  constructor(private accountService: AccountService){}
 
-  ngOnInit(): void{
-    this.http.get('https://localhost:5001/api/users').subscribe({
-      next: response => this.users = response,
-      error: error => console.log(error),
-      complete: () => console.log('Request has completed!')
-    })
+  ngOnInit(): void {
+    this.setCurrentUser();
+  }
+
+  // Gets the current user from local storage and sets it 
+  // as the current user of the AccountService
+  setCurrentUser() {
+    const userString = localStorage.getItem('user');
+    if(!userString) return;
+    const user: any = JSON.stringify(userString); // ***any should change to User
+    this.accountService.setCurrentUser(user);
   }
 
 }

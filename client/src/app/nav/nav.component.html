@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Dating App</a>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button> When you minimize the window the titles are becoming on button to expand but i haven't 
+      fix it with functionality that it needs'-->
+    <!-- <div class="collapse navbar-collapse" id="navbarCollapse"> -->
+
+    <!--This is an Angular template syntax that uses a pipe with the async keyword to handle asynchronous operations in the template. 
+        The currentUser$ property is an observable that contains the current user, and the async pipe subscribes to it and updates the 
+        view whenever the value changes.The *ngIf directive checks whether the value emitted by the currentUser$ 
+        observable is truthy, and only displays the navigation links if a user is currently logged in-->
+    <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="accountService.currentUser$ | async">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Matches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Lists</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li>
+    </ul>
+
+    <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
+      <a class="dropdown-toggle text-light" dropdownToggle>Welcome User</a>
+      <ul class="dropdown-menu mt-3" *dropdownMenu>
+          <li><a class="drowpdown-item">Edit Profile</a></li>
+          <li><a class="drowpdown-item" (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+
+    <form *ngIf="!(accountService.currentUser$ | async)" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
+      <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username">
+      <input name="password" [(ngModel)]="model.password" class="form-control me-2" type="password"
+        placeholder="Password">
+      <button class="btn btn-outline-success" type="submit">Login</button>
+    </form>
+  </div>
+  <!-- </div> -->
+</nav>

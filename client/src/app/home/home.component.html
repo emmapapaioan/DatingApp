@@ -1,0 +1,29 @@
+<div class="container mt-5">
+
+    <div *ngIf="!registerMode" style="text-align: center;">
+        <h1>Find your match!</h1>
+        <p class="lead">Come on in to view your matches.. all you need to do is sign up!</p>
+        <div class="text-center">
+            <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2">Register</button>
+            <button class="btn btn-secondary btn-lg">Learn more</button>
+        </div>
+    </div>
+
+    <div *ngIf="registerMode" class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <!--<app-register> is an Angular component that is being used as a child component.
+                (cancelRegister)="cancelRegisterMode($event)" is using event binding to listen for the 
+                cancelRegister event emitted by the app-register child component. The cancelRegister event is 
+                emitted when the user cancels the registration process. The parent component has a method 
+                cancelRegisterMode($event) that is executed when the cancelRegister event is emitted. 
+                This method is responsible for setting the registerMode property to false, which hides the 
+                registration form and shows the initial content.-->
+                <app-register 
+                    (cancelRegister)="cancelRegisterMode($event)"
+                    ></app-register>
+            </div>
+        </div>  
+    </div>
+
+</div>

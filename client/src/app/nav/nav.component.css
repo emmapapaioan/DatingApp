@@ -1,0 +1,10 @@
+.dropdown-toggle, 
+.dropdown-menu{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
