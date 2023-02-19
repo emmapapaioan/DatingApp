@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from './_models/user';
 import { AccountService } from './_services/account.service';
 
 @Component({ //Decorator

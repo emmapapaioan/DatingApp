@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { User } from '../_models/user';
+import { Router } from '@angular/router'
+import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
 
 @Component({
@@ -11,29 +11,35 @@ import { AccountService } from '../_services/account.service';
 export class NavComponent implements OnInit {
   model : any = {};
 
-  // Initializing the accountService property with an instance of the AccountService 
-  // injected by Angular's dependency injection system
-  constructor(public accountService: AccountService) { }
+  // Initializes the accountService and router dependencies as public and private properties respectively 
+  // This allows the component to use the AccountService to handle user authentication, the Router to 
+  // navigate between different views in the application and the ToastrService to display an error properly
+  constructor(public accountService: AccountService, private router: Router,
+    private toastr: ToastrService) { }
 
   // Runs when the component is initialized and it sets the currentUser$ observable 
   // to the value of the currentUser$ observable of the AccountService
   ngOnInit(): void {
   }
 
-  // Calling the login method of the accountService with the user's credentials and 
-  // subscribing to the response to handle the success or failure of the login attempt
-  // Since this is an HTTP request, it is not essential to unsubscribe***
+  // ***Since this is an HTTP request, it is not essential to unsubscribe after***
   login() {
+    // Calls the login() method of the accountService with the user's credentials and subscribes to the response
     this.accountService.login(this.model).subscribe({
-      next: response => {
-        console.log(response);
-      },
-      error: error => console.log(error)
+      // If the login attempt is successful, navigates the user to the /members page
+      next: () => this.router.navigateByUrl('/members'),
+      // If there is an error during the login attempt, displays the error message using the Toastr service
+      error: error => {
+        this.toastr.error(error.error),
+        console.log(error)
+      }
     })
   }
 
   // Calling the logout method of the accountService to log the user out
+  // Navigates user back to the root page 
   logout() {
     this.accountService.logout();
+    this.router.navigateByUrl('/');
   }
 }
