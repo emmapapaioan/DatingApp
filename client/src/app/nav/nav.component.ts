@@ -8,8 +8,9 @@ import { AccountService } from '../_services/account.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
+
 export class NavComponent implements OnInit {
-  model : any = {};
+  model: any = {};
 
   // Initializes the accountService and router dependencies as public and private properties respectively 
   // This allows the component to use the AccountService to handle user authentication, the Router to 
@@ -23,16 +24,11 @@ export class NavComponent implements OnInit {
   }
 
   // ***Since this is an HTTP request, it is not essential to unsubscribe after***
+  // Calls the login() method of the accountService with the user's credentials and subscribes to the response
+  // If the login attempt is successful, navigates the user to the /members page
   login() {
-    // Calls the login() method of the accountService with the user's credentials and subscribes to the response
     this.accountService.login(this.model).subscribe({
-      // If the login attempt is successful, navigates the user to the /members page
-      next: () => this.router.navigateByUrl('/members'),
-      // If there is an error during the login attempt, displays the error message using the Toastr service
-      error: error => {
-        this.toastr.error(error.error),
-        console.log(error)
-      }
+      next: () => this.router.navigateByUrl('/members')
     })
   }
 
