@@ -1,9 +1,6 @@
-using System.Data;
 using API.Data;
 using API.Entities;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace API.Controllers
 {

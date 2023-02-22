@@ -11,7 +11,6 @@ import { AccountService } from '../_services/account.service';
 
 export class NavComponent implements OnInit {
   model: any = {};
-
   // Initializes the accountService and router dependencies as public and private properties respectively 
   // This allows the component to use the AccountService to handle user authentication, the Router to 
   // navigate between different views in the application and the ToastrService to display an error properly
