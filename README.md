@@ -46,15 +46,15 @@ This project was built using the following technologies:
 <p>The application includes authentication functionality using JSON Web Tokens (JWT). Users can create an account and login to access the main features of the app.<p>
 
 <h3>User Profiles</h3>
-Users can create profiles that include their basic information, photos, and interests. They can also edit their profiles and upload new photos. *</li>
+Users can create profiles that include their basic information, photos, and interests. They can also edit their profiles and upload new photos.
 
-<h3>Matching</h3>
-The application includes a matching feature that allows users to search for potential matches based on their interests and location. Users can view other users' profiles and choose to like or dislike them. *
+<h3>Matching*</h3>
+The application includes a matching feature that allows users to search for potential matches based on their interests and location. Users can view other users' profiles and choose to like or dislike them. 
 
 <h3>Messaging</h3>
-Users can communicate with each other using a messaging system. They can send and receive messages from their matches and view their conversation history. *
+Users can communicate with each other using a messaging system. They can send and receive messages from their matches and view their conversation history. 
 
-<h6><i>(*Under construction)</i></h6>
+<h6><i>(Under construction)</i></h6>
 <h6><i>This project was implemented as I was practising on how to use the framework Angular and the programming language C#. Video Source: https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/learn/lecture/22400360#reviews by Neil Cummings.</i></h6>
 
 
