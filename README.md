@@ -22,13 +22,14 @@ Before running the application, make sure you have the following software instal
 
 
 # Running the API
-To run the API, navigate to the api folder from the terminal and run the following command: ``` dotnet run ```
+To run the API, navigate to the api folder from the terminal and run the following command: ``` dotnet run ```.
 
 
 This will start the API server and make it available at https://localhost:5001.
 
 # Running the client-side application
-To run the client-side application, navigate to the client folder from the terminal and run the following command: ``` ng serve ```
+To run the client-side application, navigate to the client folder from the terminal and run the following commands: 
+``` npm update --force ``` and then ``` ng serve ```.
 
 This will start the development server and make the application available at https://localhost:4200.
 
