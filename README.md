@@ -29,7 +29,7 @@ This will start the API server and make it available at https://localhost:5001.
 
 # Running the client-side application
 To run the client-side application, navigate to the client folder from the terminal and run the following commands: 
-``` npm update --force ``` and then ``` ng serve ```.
+``` npm update --force ``` (this command is needed only the first time) and then ``` ng serve ```.
 
 This will start the development server and make the application available at https://localhost:4200.
 
