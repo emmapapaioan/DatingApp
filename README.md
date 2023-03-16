@@ -8,7 +8,7 @@ Welcome to the DatingApp project! This is a web application for dating that allo
 
 # Getting Started
 To get started, clone this repository to your local machine using the following command:
-``` git clone ``` https://github.com/emmapapaioan/DatingApp.git
+``` git clone https://github.com/emmapapaioan/DatingApp.git```
 
 # Prerequisites
 Before running the application, make sure you have the following software installed on your machine:
