@@ -36,8 +36,8 @@ This will start the development server and make the application available at htt
 # Technologies Used
 This project was built using the following technologies:
 <ul>
-<li>Angular 12</li>
-<li>Bootstrap 4</li>
+<li>Angular 15.1.5</li>
+<li>Bootstrap 5.2.3</li>
 <li>Font Awesome</li>
 <li>ngx-bootstrap</li>
 <li>RxJS</li>
