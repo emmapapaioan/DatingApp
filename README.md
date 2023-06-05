@@ -17,7 +17,7 @@ Before running the application, make sure you have the following software instal
 - Visual Studio or Visual Studio Code (optional)
 
 ## Running the API
-To run the API, navigate to the api folder from the terminal and run the following command: `dotnet run`.
+To run the API, navigate to the API folder from the terminal and run the following command: `dotnet run`.
 
 This will start the API server and make it available at https://localhost:5001.
 
